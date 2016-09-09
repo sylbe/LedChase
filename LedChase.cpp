@@ -12,13 +12,18 @@
   array of pin numbers (the pins where the LED are attached)
   optional: period of the chase movement  (duration of a period in ms)
   optional: movement pattern ID
-  0 fixed
-  1: blinking
-  optional: % of time when LED is ON vs OFF
-  or chase direction (left or right)
+ FIXED_OFF 0x0   all LEDs OFF
+ FIXED_ON  0x1   all LEDs ON
+ BLINKING  0x2   blinking  , optional: % of time when LED is ON vs OFF  //TODO or chase direction (left or right)
+ CHASE_CYCLE 0x3 chase pattern,  optional number of LEDs ON at any given time (default=1)
+ VUMETER 0x4     VUMETER view, input : %  (0% = no LED, 100% = all LEDs ON,...)
 
-  multitasking using Scheduler library (tbc)
+
+
+
+
  */
+
 // This is optional, but set to false to disable
 #define LED_DEBUG true
 #include <LedDebug.h>
